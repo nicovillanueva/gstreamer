@@ -36,7 +36,8 @@ jobs:
           echo "$HOME/.sonar/build-wrapper-linux-x86" >> $GITHUB_PATH
       - name: install meson/ninja
         run: |
-          sudo apt-get install python3 python3-pip python3-setuptools python3-wheel ninja-build
+          sudo apt-get update
+          sudo apt-get install -y python3 python3-pip python3-setuptools python3-wheel ninja-build meson
       - name: Run build-wrapper
         run: |
           meson build
